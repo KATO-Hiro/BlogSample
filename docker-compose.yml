@@ -1,0 +1,13 @@
+# See:
+# https://github.com/ohbarye/rails-react-typescript-docker-example/blob/master/docker-compose.yml
+version: '3'
+services:
+  frontend:
+    image: "node:14.0.0"
+    user: "node"
+    working_dir: /usr/src/app/frontend
+    volumes:
+      - ./frontend:/usr/src/app/frontend:cached
+    command: yarn dev
+    ports:
+      - "3000:3000"
