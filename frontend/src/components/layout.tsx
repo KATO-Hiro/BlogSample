@@ -6,7 +6,13 @@ import Link from 'next/link';
 const name = 'Hiro';
 export const siteTitle = 'Next.js Sample Website';
 
-export default function({ children, home }) {
+export default function({
+  children,
+  home
+}: {
+  children: React.ReactNode
+  home?: boolean
+}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -37,7 +43,7 @@ export default function({ children, home }) {
             <img
               src="/images/profile.jpg"
               className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
-              name={name}
+              alt={name}
             />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
           </>
@@ -48,7 +54,7 @@ export default function({ children, home }) {
                 <img
                   src="/images/profile.jpg"
                   className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
-                  name={name}
+                  alt={name}
                 />
               </a>
             </Link>
